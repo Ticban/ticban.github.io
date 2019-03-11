@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="java,">
 
 
 
@@ -79,13 +79,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Ticban">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="String 字符串类String是不可变的12345public final class String implements java.io.Serializable,Comparable&amp;lt;String&amp;gt;,CharSequence&amp;#123;    //String本质是个char数组，而且用final关键字修饰    private final char value[];&amp;#125">
+<meta name="keywords" content="java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="String及其包装类">
+<meta property="og:url" content="http://yoursite.com/2019/03/11/String/index.html">
 <meta property="og:site_name" content="Ticban">
+<meta property="og:description" content="String 字符串类String是不可变的12345public final class String implements java.io.Serializable,Comparable&amp;lt;String&amp;gt;,CharSequence&amp;#123;    //String本质是个char数组，而且用final关键字修饰    private final char value[];&amp;#125">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-11T11:38:13.740Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ticban">
+<meta name="twitter:title" content="String及其包装类">
+<meta name="twitter:description" content="String 字符串类String是不可变的12345public final class String implements java.io.Serializable,Comparable&amp;lt;String&amp;gt;,CharSequence&amp;#123;    //String本质是个char数组，而且用final关键字修饰    private final char value[];&amp;#125">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/11/String/">
 
 
 
 
 
-  <title>Ticban</title>
+  <title>String及其包装类 | Ticban</title>
   
 
 
@@ -140,8 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -234,9 +238,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -266,9 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/11/String/" itemprop="url">String及其包装类</a></h1>
+          <h1 class="post-title" itemprop="name headline">String及其包装类</h1>
         
 
         <div class="post-meta">
@@ -340,9 +342,7 @@
       
 
       
-        
-          
-            <h1 id="String-字符串类"><a href="#String-字符串类" class="headerlink" title="String 字符串类"></a>String 字符串类</h1><h2 id="String是不可变的"><a href="#String是不可变的" class="headerlink" title="String是不可变的"></a>String是不可变的</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public final class String implements java.io.Serializable,Comparable&lt;String&gt;</span><br><span class="line">,CharSequence&#123;</span><br><span class="line">    //String本质是个char数组，而且用final关键字修饰</span><br><span class="line">    private final char value[];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="String-字符串类"><a href="#String-字符串类" class="headerlink" title="String 字符串类"></a>String 字符串类</h1><h2 id="String是不可变的"><a href="#String是不可变的" class="headerlink" title="String是不可变的"></a>String是不可变的</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public final class String implements java.io.Serializable,Comparable&lt;String&gt;</span><br><span class="line">,CharSequence&#123;</span><br><span class="line">    //String本质是个char数组，而且用final关键字修饰</span><br><span class="line">    private final char value[];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>String类是final修饰，表明其不可以被继承，即不可能通过子类重写其方法</li>
 <li>内部数组也是final修饰，一旦赋值不可更改其引用</li>
@@ -388,8 +388,6 @@
 <li>适合的场景：String适合于少量的字符串操作；StringBuilder适合于单线程下在字符缓冲区进行大量操作；StringBuilder适用于多线程下字符缓冲区进行大量操作的情况。</li>
 </ul>
 
-          
-        
       
     </div>
     
@@ -404,268 +402,36 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/11/oop基础/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="TCB">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ticban">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/03/11/oop基础/" itemprop="url">java oop基础</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-11T16:11:14+08:00">
-                2019-03-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/java基础/" itemprop="url" rel="index">
-                    <span itemprop="name">java基础</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/java/" rel="tag"># java</a>
           
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="oop的特点"><a href="#oop的特点" class="headerlink" title="oop的特点"></a>oop的特点</h2><p>oop（面向对象编程）引入了封装、继承和多态等概念来建立一种对象层次结构，用以模拟公共行为的一个集合。</p>
-<h3 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h3><blockquote>
-<p>隐藏了类的内部实现机制，可以在不影响使用的情况下改变类的内部结构，同时也保护了数据。对外界而言它的内部细节是隐藏的，暴露给外界的只是它的访问方法。</p>
-</blockquote>
-<p><strong>java当中的封装主要体现在Java的访问权限控制：public &gt;protect&gt;default=package&gt;private。封装可以保护类中的信息，只提供外界它的访问方法。</strong></p>
-<h4 id="访问关键字的范围"><a href="#访问关键字的范围" class="headerlink" title="访问关键字的范围"></a>访问关键字的范围</h4><p><img src="https://note.youdao.com/yws/public/resource/7ccb7bec86539cd6a44cf81af119060d/xmlnote/B328161404224A66B3F64788DD9A9B4D/10071" alt="enter image description here"></p>
-<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><blockquote>
-<p>继承使得子类具有父类的属性和方法或者方法的重新定义和扩展</p>
-</blockquote>
-<p><strong>java只支持单继承，但是可以通过内部类继承其他类来实现多继承。</strong></p>
-<pre><code>public class Son extend Father{
-    public void go(){
-        System.out.println(&quot;son go&quot;);
-    }
-
-    public void eat(){
-        System.out.println(&quot;son eat&quot;);
-    }
-
-    public void cook(){
-        //匿名内部类实现的多继承
-        new Mother().cook();
-        //内部类继承第二个父类来实现多继承
-        Mom mom=new Mom();
-        mom.cook();
-    }
-
-    private class Mom extends Mother{
-        @Override
-        public void cook(){
-            System.out.println(&quot;mom cook&quot;);
-        }
-    }
-}
-
-public class Mother{
-    public void cook(){}
-}
-
-public class Father{
-    public void go(){}
-    public void eat(){}
-}
-</code></pre><h3 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h3><p>对于面向对象而言，多态分为编译时多态和运行时多态。</p>
-<blockquote>
-<p>编译时多态是静态的，主要指的是重载。重载是同一个类中同名方法，可以传入多个参数组合。重载的判定有参数的个数、参数的类型、参数的顺序。参数的返回值类型不能作为重载的依据，因为编译器并不能识别它们，导致编译出错。重载在编译的时候就能够根据传入的参数组合，决定调用的方法了。<br>运行时多态是重写，重写是继承关系的子类有和父类同名同参数的方法，覆盖父类的实现。因此重写方法在编译时并不能直到子类调用的时哪个方法，但是运行时操作数栈会根据子类的引用去子类的类信息中查找方法，找不到时再去父类的类信息中查找方法。<br>编译器的静态分派和运行期的动态分派对应的场景就是它们（重载和重写）</p>
-</blockquote>
-<h3 id="向上转型和向下转型"><a href="#向上转型和向下转型" class="headerlink" title="向上转型和向下转型"></a>向上转型和向下转型</h3><pre><code>public static void main(String[] args) {
-    Son son = new Son();
-//首先先明确一点，转型指的是左侧引用的改变。
-//father引用类型是Father，指向Son实例，就是向上转型，既可以使用子类的方法，也可以使用父类的方法。
-//向上转型,此时运行father的方法
-    Father father = son;
-    father.smoke();
-//不能使用子类独有的方法。
-// father.play();编译会报错
-    father.drive();
-//Son类型的引用指向Father的实例，所以是向下转型，不能使用子类非重写的方法，可以使用父类的方法。
-
-//向下转型，此时运行了son的方法
-    Son son1 = (Son) father;
-//转型后就是一个正常的Son实例
-    son1.play();
-    son1.drive();
-    son1.smoke();
-
-//因为向下转型之前必须先经历向上转型。
-//在向下转型过程中，分为两种情况：
-
-//情况一：如果父类引用的对象如果引用的是指向的子类对象，
-//那么在向下转型的过程中是安全的。也就是编译是不会出错误的。
-//因为运行期Son实例确实有这些方法
-    Father f1 = new Son();
-    Son s1 = (Son) f1;
-    s1.smoke();
-    s1.drive();
-    s1.play();
-
-//情况二：如果父类引用的对象是父类本身，那么在向下转型的过程中是不安全的，编译不会出错，
-//但是运行时会出现java.lang.ClassCastException错误。它可以使用instanceof来避免出错此类错误。
-//因为运行期Father实例并没有这些方法。
-    Father f2 = new Father();
-    Son s2 = (Son) f2;
-    s2.drive();
-    s2.smoke();
-    s2.play();
-
-//向下转型和向上转型的应用，有些人觉得这个操作没意义，何必先向上转型再向下转型呢，不是多此一举么。其实可以用于方法参数中的类型聚合，然后具体操作再进行分解。
-//比如add方法用List引用类型作为参数传入，传入具体类时经历了向下转型
-    add(new LinkedList());
-    add(new ArrayList());
-
-}
-
-public static void add(List list) {
-    System.out.println(list);
-    //在操作具体集合时又经历了向上转型
-    ArrayList arr = (ArrayList) list;
-    LinkedList link = (LinkedList) list;
-}
-</code></pre><p>总结：<br>向上转型和向下转型都是针对引用的转型，是编译期进行的转型，根据引用类型来判断使用哪个方法。并且在传入方法时会自动进行转型（有需要的话）。运行期将引用指向实例，如果是不安全的转型则会报错，若安全则继续执行方法，即编译时不报错，运行时报错。</p>
-<h3 id="动态绑定和静态绑定"><a href="#动态绑定和静态绑定" class="headerlink" title="动态绑定和静态绑定"></a>动态绑定和静态绑定</h3><p>把一个方法与其所在的类/对象关联起来叫做方法的绑定。绑定分为静态绑定（前期绑定）和动态绑定（后期绑定）。<br>静态绑定（前期绑定）是指：在程序运行前就已经知道方法是属于那个类的，在编译的时候就可以连接到类中，定位到这个方法。<br> 在Java中，final、private、static修饰的方法以及构造函数都是静态绑定的，不需程序运行，不需具体的实例对象就可以知道这个方法的具体内容。<br> 动态绑定（后期绑定）是指：在程序运行过程中，根据具体的实例对象才能具体确定是哪个方法。<br>动态绑定是多态性得以实现的重要因素，它通过方法表来实现：每个类被加载到虚拟机时，在方法区保存元数据，其中，包括一个叫做 方法表（method table）的东西，表中记录了这个类定义的方法的指针，每个表项指向一个具体的方法代码。如果这个类重写了父类中的某个方法，则对应表项指向新的代码实现处。从父类继承来的方法位于子类定义的方法的前面。</p>
-<h4 id="动态绑定的编译、运行原理："><a href="#动态绑定的编译、运行原理：" class="headerlink" title="动态绑定的编译、运行原理："></a>动态绑定的编译、运行原理：</h4><h6 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h6><pre><code> 在代码的编译阶段，编译器通过引用类型 在方法区中该类型的方法表中查找匹配的方法（最佳匹配法：参数类型最接近的被调用），如果有则编译通过。
-编译阶段是确保方法的存在性，保证程序能顺利、安全运行。
-</code></pre><h6 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h6><pre><code>编译阶段在声明对象类型的方法表中查找方法，只是为了安全地通过编译（也为了检验方法是否是存在的）。
-而在实际运行这条语句时，在执行 Father ft=new Son(); 这一句时创建了一个Son实例对象，然后在 ft.say() 调用方法时，JVM会把刚才的son对象压入操作数栈，用它来进行调用。
-而用实例对象进行方法调用的过程就是动态绑定：根据实例对象所属的类型去查找它的方法表，找到匹配的方法进行调用。若无重写，则按照父类中的方法表顺序保存在子类方法表中。故此：动态绑定根据对象的类型的方法表查找方法是一定会匹配
-# 静态分派
-在编译期间，可以根据变量的静态类型确定方法执行版本的分派动作称作静态分派。典型的是方法的重载。
-# 动态分派
-在编译期间确定不下来，只有在方法调用时，根据对象的实际类型确定方法执行版本的分派动作称作动态分派。 重写。
-动态分派的实现：
-类在方法区中有一个方法表，方法表中存放着各个方法的实际入口地址，如果某个方法在子类没有被重写，那么子类的虚方法表里面的地址入口和父类相同方法的地址入口是一致的，都指向父类的实现入口。如果子类中重写了这个方法，子类方法表中的地址将会替换为指向子类的实现入口。
-</code></pre>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/11/oop基础/" rel="next" title="java oop基础">
+                <i class="fa fa-chevron-left"></i> java oop基础
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
       
     </footer>
   </div>
@@ -675,10 +441,11 @@ public static void add(List list) {
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -686,6 +453,10 @@ public static void add(List list) {
 
 
           
+
+  
+
+
 
         </div>
         
@@ -706,8 +477,17 @@ public static void add(List list) {
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -767,6 +547,22 @@ public static void add(List list) {
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#String-字符串类"><span class="nav-number">1.</span> <span class="nav-text">String 字符串类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#String是不可变的"><span class="nav-number">1.1.</span> <span class="nav-text">String是不可变的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String不可变性有什么好处"><span class="nav-number">1.2.</span> <span class="nav-text">String不可变性有什么好处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串常量池"><span class="nav-number">1.3.</span> <span class="nav-text">字符串常量池</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#过程"><span class="nav-number">1.3.1.</span> <span class="nav-text">过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String的连接"><span class="nav-number">1.4.</span> <span class="nav-text">String的连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intern"><span class="nav-number">1.5.</span> <span class="nav-text">intern()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#equals"><span class="nav-number">1.6.</span> <span class="nav-text">equals()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#equals和-的区别"><span class="nav-number">1.7.</span> <span class="nav-text">equals和==的区别</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#StringBuilder和StringBuilder"><span class="nav-number">2.</span> <span class="nav-text">StringBuilder和StringBuilder</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#扩容"><span class="nav-number">2.1.</span> <span class="nav-text">扩容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#delete-删除"><span class="nav-number">2.2.</span> <span class="nav-text">delete 删除</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#String、StringBuilder、StringBuffer的区别"><span class="nav-number">3.</span> <span class="nav-text">String、StringBuilder、StringBuffer的区别</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -900,6 +696,10 @@ public static void add(List list) {
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
