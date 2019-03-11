@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="String 字符串类String是不可变的12345public final class String implements java.io.Serializable,Comparable&amp;lt;String&amp;gt;,CharSequence&amp;#123;    //String本质是个char数组，而且用final关键字修饰    private final char value[];&amp;#125">
+<meta name="description" content="StringString是不可变的12345public final class String implements java.io.Serializable,Comparable&amp;lt;String&amp;gt;,CharSequence&amp;#123;    //String本质是个char数组，而且用final关键字修饰    private final char value[];&amp;#125;  St">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="String及其包装类">
 <meta property="og:url" content="http://yoursite.com/2019/03/11/String/index.html">
 <meta property="og:site_name" content="Ticban">
-<meta property="og:description" content="String 字符串类String是不可变的12345public final class String implements java.io.Serializable,Comparable&amp;lt;String&amp;gt;,CharSequence&amp;#123;    //String本质是个char数组，而且用final关键字修饰    private final char value[];&amp;#125">
+<meta property="og:description" content="StringString是不可变的12345public final class String implements java.io.Serializable,Comparable&amp;lt;String&amp;gt;,CharSequence&amp;#123;    //String本质是个char数组，而且用final关键字修饰    private final char value[];&amp;#125;  St">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-11T11:38:13.740Z">
+<meta property="og:updated_time" content="2019-03-11T11:41:42.558Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="String及其包装类">
-<meta name="twitter:description" content="String 字符串类String是不可变的12345public final class String implements java.io.Serializable,Comparable&amp;lt;String&amp;gt;,CharSequence&amp;#123;    //String本质是个char数组，而且用final关键字修饰    private final char value[];&amp;#125">
+<meta name="twitter:description" content="StringString是不可变的12345public final class String implements java.io.Serializable,Comparable&amp;lt;String&amp;gt;,CharSequence&amp;#123;    //String本质是个char数组，而且用final关键字修饰    private final char value[];&amp;#125;  St">
 
 
 
@@ -282,7 +282,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-11T19:38:13+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-11T19:41:42+08:00">
                 2019-03-11
               </time>
             
@@ -342,7 +342,7 @@
       
 
       
-        <h1 id="String-字符串类"><a href="#String-字符串类" class="headerlink" title="String 字符串类"></a>String 字符串类</h1><h2 id="String是不可变的"><a href="#String是不可变的" class="headerlink" title="String是不可变的"></a>String是不可变的</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public final class String implements java.io.Serializable,Comparable&lt;String&gt;</span><br><span class="line">,CharSequence&#123;</span><br><span class="line">    //String本质是个char数组，而且用final关键字修饰</span><br><span class="line">    private final char value[];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="String"><a href="#String" class="headerlink" title="String"></a>String</h1><h2 id="String是不可变的"><a href="#String是不可变的" class="headerlink" title="String是不可变的"></a>String是不可变的</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public final class String implements java.io.Serializable,Comparable&lt;String&gt;</span><br><span class="line">,CharSequence&#123;</span><br><span class="line">    //String本质是个char数组，而且用final关键字修饰</span><br><span class="line">    private final char value[];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>String类是final修饰，表明其不可以被继承，即不可能通过子类重写其方法</li>
 <li>内部数组也是final修饰，一旦赋值不可更改其引用</li>
@@ -362,12 +362,12 @@
 <h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><p>每当创建字符串时，jvm首先检查字符串常量池，如果常量池中存在该字符串，就直接返回该字符串在常量池中的引用。如果不存在，就会实例化该字符串并将其放置到常量池中</p>
 <h2 id="String的连接"><a href="#String的连接" class="headerlink" title="String的连接"></a>String的连接</h2><blockquote>
 <p>‘+’的本质是编译的时候将‘+’替换成StringBuilder.append()</p>
+</blockquote>
 <ul>
 <li>使用只包含常量的字符串连接符创建的也是常量，编译期就能确定，一经确定就存储到常量池中。而且常量间的相加因为编译器会优化的原因，不会引起效率问题</li>
 <li>使用包含变量的字符串连接符创建的对象只有到运行期才能够确定并创建的，存储在堆中。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">public void contact () &#123;</span><br><span class="line">    //1连接方式</span><br><span class="line">    String s1 = &quot;a&quot;;</span><br><span class="line">    String s2 = &quot;a&quot;;</span><br><span class="line">    String s3 = &quot;a&quot; + s2;</span><br><span class="line">    String s4 = &quot;a&quot; + &quot;a&quot;;</span><br><span class="line">    String s5 = s1 + s2;</span><br><span class="line">    //表达式只有常量时，编译期完成计算</span><br><span class="line">    //表达式有变量时，运行期才计算，所以地址不一样</span><br><span class="line">    System.out.println(s3 == s4); //false</span><br><span class="line">    System.out.println(s3 == s5); //false</span><br><span class="line">    System.out.println(s4 == &quot;aa&quot;); //true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-</blockquote>
 <h2 id="intern"><a href="#intern" class="headerlink" title="intern()"></a>intern()</h2><p>不同版本的intern实现方式不同:</p>
 <ul>
 <li>jdk6中的intern()方法会把首次出现的字符串实例复制到常量池中，返回的也是该实例在常量池中的地址。</li>
@@ -426,6 +426,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/03/11/数据类型与常量池/" rel="prev" title="数据类型与常量池">
+                数据类型与常量池 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -502,7 +506,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -557,7 +561,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#String-字符串类"><span class="nav-number">1.</span> <span class="nav-text">String 字符串类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#String是不可变的"><span class="nav-number">1.1.</span> <span class="nav-text">String是不可变的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String不可变性有什么好处"><span class="nav-number">1.2.</span> <span class="nav-text">String不可变性有什么好处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串常量池"><span class="nav-number">1.3.</span> <span class="nav-text">字符串常量池</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#过程"><span class="nav-number">1.3.1.</span> <span class="nav-text">过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String的连接"><span class="nav-number">1.4.</span> <span class="nav-text">String的连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intern"><span class="nav-number">1.5.</span> <span class="nav-text">intern()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#equals"><span class="nav-number">1.6.</span> <span class="nav-text">equals()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#equals和-的区别"><span class="nav-number">1.7.</span> <span class="nav-text">equals和==的区别</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#StringBuilder和StringBuilder"><span class="nav-number">2.</span> <span class="nav-text">StringBuilder和StringBuilder</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#扩容"><span class="nav-number">2.1.</span> <span class="nav-text">扩容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#delete-删除"><span class="nav-number">2.2.</span> <span class="nav-text">delete 删除</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#String、StringBuilder、StringBuffer的区别"><span class="nav-number">3.</span> <span class="nav-text">String、StringBuilder、StringBuffer的区别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#String"><span class="nav-number">1.</span> <span class="nav-text">String</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#String是不可变的"><span class="nav-number">1.1.</span> <span class="nav-text">String是不可变的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String不可变性有什么好处"><span class="nav-number">1.2.</span> <span class="nav-text">String不可变性有什么好处</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符串常量池"><span class="nav-number">1.3.</span> <span class="nav-text">字符串常量池</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#过程"><span class="nav-number">1.3.1.</span> <span class="nav-text">过程</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String的连接"><span class="nav-number">1.4.</span> <span class="nav-text">String的连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#intern"><span class="nav-number">1.5.</span> <span class="nav-text">intern()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#equals"><span class="nav-number">1.6.</span> <span class="nav-text">equals()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#equals和-的区别"><span class="nav-number">1.7.</span> <span class="nav-text">equals和==的区别</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#StringBuilder和StringBuilder"><span class="nav-number">2.</span> <span class="nav-text">StringBuilder和StringBuilder</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#扩容"><span class="nav-number">2.1.</span> <span class="nav-text">扩容</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#delete-删除"><span class="nav-number">2.2.</span> <span class="nav-text">delete 删除</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#String、StringBuilder、StringBuffer的区别"><span class="nav-number">3.</span> <span class="nav-text">String、StringBuilder、StringBuffer的区别</span></a></li></ol></div>
             
 
           </div>
