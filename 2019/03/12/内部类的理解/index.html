@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="java,内部类,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="内部类什么是内部类 内部类是指再一个外部类的内部再定义一个类。内部类作为外部类成员的一部分，并且依附于外部类而存在的。 内部类可用private和protect修饰，而外部类只能使用public和缺省的包访问权限 内部类可以为静态的，静态内部类独立于外部类而存在，只能访问外部类的静态属性和方法。 内部类主要有成员内部类、局部内部类、静态内部类、匿名内部类  局部内部类在方法中定义的内部类称为局部内">
+<meta name="keywords" content="java,内部类">
+<meta property="og:type" content="article">
+<meta property="og:title" content="内部类的理解">
+<meta property="og:url" content="http://yoursite.com/2019/03/12/内部类的理解/index.html">
+<meta property="og:site_name" content="Ticban">
+<meta property="og:description" content="内部类什么是内部类 内部类是指再一个外部类的内部再定义一个类。内部类作为外部类成员的一部分，并且依附于外部类而存在的。 内部类可用private和protect修饰，而外部类只能使用public和缺省的包访问权限 内部类可以为静态的，静态内部类独立于外部类而存在，只能访问外部类的静态属性和方法。 内部类主要有成员内部类、局部内部类、静态内部类、匿名内部类  局部内部类在方法中定义的内部类称为局部内">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-12T06:20:05.884Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="内部类的理解">
+<meta name="twitter:description" content="内部类什么是内部类 内部类是指再一个外部类的内部再定义一个类。内部类作为外部类成员的一部分，并且依附于外部类而存在的。 内部类可用private和protect修饰，而外部类只能使用public和缺省的包访问权限 内部类可以为静态的，静态内部类独立于外部类而存在，只能访问外部类的静态属性和方法。 内部类主要有成员内部类、局部内部类、静态内部类、匿名内部类  局部内部类在方法中定义的内部类称为局部内">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/03/12/内部类的理解/">
+
+
+
+
+
+  <title>内部类的理解 | Ticban</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Ticban</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/12/内部类的理解/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TCB">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ticban">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">内部类的理解</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-12T14:20:05+08:00">
+                2019-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/java基础/" itemprop="url" rel="index">
+                    <span itemprop="name">java基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h1><h2 id="什么是内部类"><a href="#什么是内部类" class="headerlink" title="什么是内部类"></a>什么是内部类</h2><ul>
+<li>内部类是指再一个外部类的内部再定义一个类。内部类作为外部类成员的一部分，并且依附于外部类而存在的。</li>
+<li>内部类可用private和protect修饰，而外部类只能使用public和缺省的包访问权限</li>
+<li>内部类可以为静态的，静态内部类独立于外部类而存在，只能访问外部类的静态属性和方法。</li>
+<li>内部类主要有成员内部类、局部内部类、静态内部类、匿名内部类</li>
+</ul>
+<h3 id="局部内部类"><a href="#局部内部类" class="headerlink" title="局部内部类"></a>局部内部类</h3><p>在方法中定义的内部类称为局部内部类。与局部变量类似，局部内部类也不能有访问修饰符修饰。局部内部类只能在定义该内部类的方法内实例化，不可以在此方法外对其实例化。且只在方法被执行时加载<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">public class OuterClass&#123;</span><br><span class="line">    class A&#123;</span><br><span class="line">        //局部内部类就是写在方法里的类，只在方法执行时被加载，一次使用</span><br><span class="line">        public void test()&#123;</span><br><span class="line">            int i = 1;</span><br><span class="line">            final int j = 2;</span><br><span class="line">            class B &#123;</span><br><span class="line">                public void test () &#123;</span><br><span class="line">                      System.out.println(i);</span><br><span class="line">                      System.out.println(j);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            B b=new B();</span><br><span class="line">            b.test();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h3><p>匿名内部类是局部内部类的一中特殊形式。没有名字的内部类。<br>使用内部类有几个原则：</p>
+<ul>
+<li>匿名内部类不能有构造方法</li>
+<li>匿名内部类不能定义任何静态成员、方法和类</li>
+<li>匿名内部类不能是public、private、static、protect</li>
+<li>只能创建匿名内部类的一个实例</li>
+<li>一个匿名内部类一定是在new的后面，用其隐含实现一个接口或者实现一个类</li>
+<li>因匿名内部类为局部内部类，所以局部内部类的所有限制都对其生效<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">interface D&#123;</span><br><span class="line">    void run ();</span><br><span class="line">&#125;</span><br><span class="line">abstract class E&#123;</span><br><span class="line">    E ()&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    abstract void work();</span><br><span class="line">&#125;</span><br><span class="line">class A &#123;</span><br><span class="line"></span><br><span class="line">        @Test</span><br><span class="line">        public void test (int k) &#123;</span><br><span class="line">            //利用接口写出一个实现该接口的类的实例。</span><br><span class="line">            //有且仅有一个实例，这个类无法重用。</span><br><span class="line">            new Runnable() &#123;</span><br><span class="line">                @Override</span><br><span class="line">                public void run() &#123;</span><br><span class="line">                    k = 1;</span><br><span class="line">                    //报错，当外部方法中的局部变量在内部类使用中必须改为final类型。</span><br><span class="line">                    //因为方外部法中即使改变了这个变量也不会反映到内部类中。</span><br><span class="line">                    //所以对于内部类来讲这只是一个常量。</span><br><span class="line">                    System.out.println(100);</span><br><span class="line">                    System.out.println(k);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;;</span><br><span class="line">            new D()&#123;</span><br><span class="line">                //实现接口的匿名类</span><br><span class="line">                int i =1;</span><br><span class="line">                @Override</span><br><span class="line">                public void run() &#123;</span><br><span class="line">                    System.out.println(&quot;run&quot;);</span><br><span class="line">                    System.out.println(i);</span><br><span class="line">                    System.out.println(k);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;.run();</span><br><span class="line">            new E()&#123;</span><br><span class="line">                //继承抽象类的匿名类</span><br><span class="line">                int i = 1;</span><br><span class="line">                void run (int j) &#123;</span><br><span class="line">                    j = 1;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                @Override</span><br><span class="line">                void work() &#123;</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>使用匿名内部类的场景：<br>类在定义后马上用到；类非常小；给类命名并不会导致你的代码容易被理解。</p>
+<h4 id="匿名内部类的final"><a href="#匿名内部类的final" class="headerlink" title="匿名内部类的final"></a>匿名内部类的final</h4><p>当给匿名内部类传递参数的时候，该形参在内部类中需要被使用。那么该形参必须要为final。</p>
+<p><strong>为什么必须要为final</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class OuterClass &#123;</span><br><span class="line">    public void display(final String name,String age)&#123;</span><br><span class="line">        class InnerClass&#123;</span><br><span class="line">            void display()&#123;</span><br><span class="line">                System.out.println(name);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>内部类编译后的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class OuterClass$InnerClass &#123;</span><br><span class="line">    public InnerClass(String name,String age)&#123;</span><br><span class="line">        this.InnerClass$name = name;</span><br><span class="line">        this.InnerClass$age = age;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    public void display()&#123;</span><br><span class="line">        System.out.println(this.InnerClass$name + &quot;----&quot; + this.InnerClass$age );</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>匿名内部类并不是直接调用方法传递的参数，而是利用自身的构造器对传入的参数进行备份，自己内部方法调用的其实是自己的属性而不是外部方法传递的参数本身。所以两者是可以任意变化的、相互独立的。<br>所以使用final来避免形参的改变</p>
+<h4 id="匿名内部类的初始化"><a href="#匿名内部类的初始化" class="headerlink" title="匿名内部类的初始化"></a>匿名内部类的初始化</h4><p>匿名内部类不能像其它类一样，它不能使用构造函数。但是可以使用构造代码块初始化<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">public class OutClass &#123;</span><br><span class="line">    public InnerClass getInnerClass(final int age,final String name)&#123;</span><br><span class="line">        return new InnerClass() &#123;</span><br><span class="line">            int age_ ;</span><br><span class="line">            String name_;</span><br><span class="line">            //构造代码块完成初始化工作</span><br><span class="line">            &#123;</span><br><span class="line">                if(0 &lt; age &amp;&amp; age &lt; 200)&#123;</span><br><span class="line">                    age_ = age;</span><br><span class="line">                    name_ = name;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            public String getName() &#123;</span><br><span class="line">                return name_;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            public int getAge() &#123;</span><br><span class="line">                return age_;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="内部类能被重载吗"><a href="#内部类能被重载吗" class="headerlink" title="内部类能被重载吗"></a>内部类能被重载吗</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">class Egg &#123;</span><br><span class="line">       private Yolk y;</span><br><span class="line"></span><br><span class="line">       protected class Yolk &#123;</span><br><span class="line">              public Yolk() &#123;</span><br><span class="line">                     System.out.println(&quot;Egg.Yolk()&quot;);</span><br><span class="line">              &#125;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       public Egg() &#123;</span><br><span class="line">              System.out.println(&quot;New Egg()&quot;);</span><br><span class="line">              y = new Yolk();</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class BigEgg extends Egg &#123;</span><br><span class="line">       public class Yolk &#123;</span><br><span class="line">              public Yolk() &#123;</span><br><span class="line">                     System.out.println(&quot;BigEgg.Yolk()&quot;);</span><br><span class="line">              &#125;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       public static void main(String[] args) &#123;</span><br><span class="line">              new BigEgg();</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">输出结果为：</span><br><span class="line">New Egg()</span><br><span class="line">Egg.Yolk()</span><br></pre></td></tr></table></figure>
+<p>内部类并不能被重载，因为内部类独立于外部类，如果这两个内部类是完全独立的两个实体，按照反编译的结果来看，它们拥有不同的命名空间。</p>
+<h2 id="内部类的共性"><a href="#内部类的共性" class="headerlink" title="内部类的共性"></a>内部类的共性</h2><ol>
+<li>内部类仍然是一个独立的类，在编译后内部类会被编译成独立的class文件，但是前面冠以外部类的类名和$符号。</li>
+<li>内部类不能用普通的方式访问。</li>
+<li>外部类不能直接访问内部类的成员，但是能通过内部类对象来访问</li>
+</ol>
+<p>内部类是外部类的一个成员，内部类可以自由的访问外部类的成员变量。 因为当某个外部类的对象创建内部类的对象时，此内部类会捕捉一个隐式引用，它引用了实例化该内部对象的外部类对象，通过这个指针，可以访问外部类对象的全部状态。<br>通过反编译内部类的字节码，主要通过一下几步做到的：</p>
+<ol>
+<li>编译器自动为内部类添加一个成员变量，这个成员变量类型和外部类类型相同。这个成员变量就是外部类实例的引用。</li>
+<li>编译器自动为内部类的构造方法添加一个外部类参数，主要为添加的成员变量赋值。</li>
+<li>在调用内部类的构造函数初始化内部类对象时，会默认传入外部类的引用。</li>
+</ol>
+<h3 id="静态内部类-嵌套类-nested-class-C-说法-与普通内部类-Inner-class-的区别"><a href="#静态内部类-嵌套类-nested-class-C-说法-与普通内部类-Inner-class-的区别" class="headerlink" title="静态内部类(嵌套类 nested class [C++说法])与普通内部类(Inner class)的区别"></a>静态内部类(嵌套类 nested class [C++说法])与普通内部类(Inner class)的区别</h3><ul>
+<li>静态内部类不持有外部类的引用：在普通内部类中，可以直接访问外部类的属性、方法，这是因为内部类持有外部类实例的引用，可以自由访问。而静态内部类只能访问外部类中的静态属性和方法。</li>
+<li>静态内部类的创立不依赖外部类：静态内部类和外部类是独立的，即使外部类消亡了，静态内部类还是存在的。而普通内部类的创建依赖于外部类的实例，即先创建外部类的实例，依靠外部类的实例才能创建内部类。生命周期和外部类相同。</li>
+</ul>
+<h3 id="使用内部类的好处"><a href="#使用内部类的好处" class="headerlink" title="使用内部类的好处"></a>使用内部类的好处</h3><p>静态内部类的使用：</p>
+<ul>
+<li>降低包的深度，方便类的使用。静态内部类适用于包含类当中，但又不依赖于外部类。</li>
+<li>静态内部类的创建不需要依赖外部类，</li>
+</ul>
+<p>非静态内部类：</p>
+<ul>
+<li>java只支持单继承，内部类的参与可以实现多继承的解决方案</li>
+<li>外部类的继承和实现接口与内部类的继承和实现无关，内部类不受其影响。</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/java/" rel="tag"># java</a>
+          
+            <a href="/tags/内部类/" rel="tag"># 内部类</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/03/11/关键字的原理理解/" rel="next" title="关键字的原理理解">
+                <i class="fa fa-chevron-left"></i> 关键字的原理理解
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">TCB</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#内部类"><span class="nav-number">1.</span> <span class="nav-text">内部类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是内部类"><span class="nav-number">1.1.</span> <span class="nav-text">什么是内部类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#局部内部类"><span class="nav-number">1.1.1.</span> <span class="nav-text">局部内部类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#匿名内部类"><span class="nav-number">1.1.2.</span> <span class="nav-text">匿名内部类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#匿名内部类的final"><span class="nav-number">1.1.2.1.</span> <span class="nav-text">匿名内部类的final</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#匿名内部类的初始化"><span class="nav-number">1.1.2.2.</span> <span class="nav-text">匿名内部类的初始化</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内部类能被重载吗"><span class="nav-number">1.2.</span> <span class="nav-text">内部类能被重载吗</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内部类的共性"><span class="nav-number">1.3.</span> <span class="nav-text">内部类的共性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#静态内部类-嵌套类-nested-class-C-说法-与普通内部类-Inner-class-的区别"><span class="nav-number">1.3.1.</span> <span class="nav-text">静态内部类(嵌套类 nested class [C++说法])与普通内部类(Inner class)的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用内部类的好处"><span class="nav-number">1.3.2.</span> <span class="nav-text">使用内部类的好处</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TCB</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
